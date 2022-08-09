@@ -1,1 +1,10 @@
-<p>nfl-times works!</p>
+<div *ngFor="let teams of listTeams">
+    <img 
+        src="{{ teams.team.logos.href }}" 
+        [alt]="teams.team.displayName"
+        [attr.aria-label]="teams.team.displayName"
+    >
+    Abreviação: {{ teams.team.abbreviation }}
+    Nome: {{ teams.team.displayName }}
+    Apelido: {{ teams.team.nickname }}
+</div>

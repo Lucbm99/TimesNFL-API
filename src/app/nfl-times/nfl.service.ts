@@ -14,11 +14,10 @@ export class NflService {
   ) { }
 
   public getTeamsNFL(): Observable<any> {
-    console.log(this.baseURL);
     return this._httpClient.get<any>(`${this.baseURL}`)
     .pipe(
       tap((data: any) => 
-      console.log(data)
+        data.sports
     ),
     catchError((error: HttpErrorResponse) => {
       console.log('error', error);
