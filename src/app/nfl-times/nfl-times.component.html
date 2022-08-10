@@ -1,10 +1,16 @@
-<div *ngFor="let teams of listTeams">
-    <img 
-        src="{{ teams.team.logos.href }}" 
-        [alt]="teams.team.displayName"
-        [attr.aria-label]="teams.team.displayName"
-    >
-    Abreviação: {{ teams.team.abbreviation }}
-    Nome: {{ teams.team.displayName }}
-    Apelido: {{ teams.team.nickname }}
-</div>
+<section class="cards">
+    <div *ngFor="let teams of listTeams">
+        <mat-card class="example-card">
+            <mat-card-title-group>
+                <mat-card-title>Nome: {{ teams.team.displayName }}</mat-card-title>
+                <mat-card-subtitle>Abreviação: {{ teams.team.abbreviation }}</mat-card-subtitle>
+                <!-- <div *ngFor="let image of images"> -->
+                    <img *ngFor="let image of images" mat-card-md-image src="{{ image.href }}">
+                <!-- </div> -->
+            </mat-card-title-group>
+            <mat-card-content>
+            Apelido: {{ teams.team.nickname }}
+            </mat-card-content>
+        </mat-card>
+    </div>
+</section>

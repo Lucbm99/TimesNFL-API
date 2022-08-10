@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NflTimesComponent implements OnInit {
   public listTeams: any;
-  public a; 
+  public images;
+  public images2;
 
   constructor(
     private _nflService: NflService,
@@ -18,21 +19,18 @@ export class NflTimesComponent implements OnInit {
 
     this._nflService.getTeamsNFL().subscribe((response) => {
       let leaguesList = response.sports.map(item => item.leagues);
-      console.log(leaguesList);
-      let teamsList = leaguesList.reduce(item => item.teams)
-      console.log(teamsList)
-      let teamsList2 = teamsList.map(item => item.teams);
-      console.log(teamsList2);
+      let reduceTeamsList = leaguesList.reduce(item => item.teams)
+      let newTeamsList = reduceTeamsList.map(item => item.teams);
 
-      let teamsList3 = teamsList2.reduce(item => item.team)
-      let teamsList4 = teamsList3.map(item => item)
-      console.log(teamsList4);
+      let reduceNewTeamsList = newTeamsList.reduce(item => item.team)
+      let teamsListActualized = reduceNewTeamsList.map(item => item)
 
-      let logos = teamsList4.map(logo => logo.team.logos)
-      console.log(logos);
-      this.a = logos;
-      this.listTeams = teamsList4;
-
+      let logos = teamsListActualized.map(logo => logo.team.logos[0])
+      this.images = logos;
+      console.log(this.images);
+      
+      this.listTeams = teamsListActualized;
+      console.log(this.listTeams)
     })
 
   }
