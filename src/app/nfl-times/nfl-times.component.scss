@@ -1,3 +1,8 @@
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem;
+}
 .cards {
     display: flex;
     flex-direction: row;
@@ -6,11 +11,24 @@
     justify-content: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    font-family: 'Kanit', sans-serif;
+}
+.mat-card-md-image {
+    margin-top: 2rem;
+}
+.image-logo:nth-child(1n+3) {
+    display: none;
 }
 .example-card {
     background-color: royalblue;
-    width: 13.6rem;
+    width: 17.6rem;
 }
-mat-card-title {
+.spinner {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+mat-card-title, mat-card-content {
     font-size: 1rem;
+    font-family: 'Kanit', sans-serif;
 }

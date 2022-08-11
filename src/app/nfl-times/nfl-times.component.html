@@ -1,15 +1,21 @@
+<div *ngIf="showLoaderTeams" class="spinner">
+    <mat-spinner></mat-spinner>
+</div>
+<h4 class="title">Liga: {{ league }} - (Futebol americano)</h4>
 <section class="cards">
     <div *ngFor="let teams of listTeams">
         <mat-card class="example-card">
             <mat-card-title-group>
-                <mat-card-title>Nome: {{ teams.team.displayName }}</mat-card-title>
-                <mat-card-subtitle>Abreviação: {{ teams.team.abbreviation }}</mat-card-subtitle>
-                <!-- <div *ngFor="let image of images"> -->
-                    <img *ngFor="let image of images" mat-card-md-image src="{{ image.href }}">
-                <!-- </div> -->
+                <mat-card-title>{{ teams.team.displayName }}</mat-card-title>
+                <mat-card-subtitle></mat-card-subtitle>
+                <div *ngFor="let image of teams.team.logos" class="image-logo">
+                    <img mat-card-md-image src="{{ image.href }}">
+                </div>
             </mat-card-title-group>
             <mat-card-content>
-            Apelido: {{ teams.team.nickname }}
+                Localização: {{ teams.team.location }}.<br>
+                Apelido: {{ teams.team.nickname }}.<br>
+                Abreviação: {{ teams.team.abbreviation }}.
             </mat-card-content>
         </mat-card>
     </div>
