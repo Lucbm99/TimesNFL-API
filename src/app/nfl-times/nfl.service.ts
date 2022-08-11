@@ -7,7 +7,7 @@ import { catchError, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class NflService {
-  private baseURL: string = 'http://site.api.espn.com/apis/site/v2/sports/football/nfl/teams';
+  private baseURL: string = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams';
 
   constructor(
     private _httpClient: HttpClient
@@ -19,7 +19,7 @@ export class NflService {
       tap((data: any) => 
         data.sports
     ),
-    catchError((error: HttpErrorResponse) => {
+    catchError((error: HttpErrorResponse) => { 
       console.log('error', error);
       return EMPTY; 
     }),
