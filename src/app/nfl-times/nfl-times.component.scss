@@ -32,3 +32,9 @@ mat-card-title, mat-card-content {
     font-size: 1rem;
     font-family: 'Kanit', sans-serif;
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .title {
+        text-align: center;
+    }
+}
