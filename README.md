@@ -40,7 +40,7 @@ NPM: https://npmjs.com
 
 🚧 Finalizado 🚧
 
-Link para acesso: https://times-nfl.vercel.app/
+Link para acesso: https://times-nfl.vercel.app
 
 
 ## 🛠️ Feito com
